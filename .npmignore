@@ -9,3 +9,6 @@ Thumbs.db
 # Ignored files
 *.ts
 !*.d.ts
+
+# Build junk
+./dist/tsc-out

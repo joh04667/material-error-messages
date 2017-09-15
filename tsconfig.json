@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./typings",
+        "outDir": "./dist/tsc-out",
         "noImplicitAny": false,
         "module": "es2015",
         "target": "ES5",

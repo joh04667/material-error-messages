@@ -1,5 +1,5 @@
 {
-  "name": "material-error-messages",
+  "name": "material-error-messages-srcs",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -11,33 +11,29 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prepublish": "tsc"
+    "prepublish": "npm run bundle && cd ./dist",
+    "postpublish": "cd ../"
   },
   "bundleDependencies": false,
   "private": true,
   "devDependencies": {
-    "@angular/cdk": "^2.0.0-beta.10",
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
     "@angular/compiler-cli": "^4.3.6",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
     "@angular/material": "^2.0.0-beta.10",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
     "@types/node": "6.0.38",
-    "core-js": "^2.4.1",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript": "^0.8.1",
-    "rxjs": "^5.1.0",
-    "typescript": "~2.3.3",
-    "zone.js": "^0.8.4"
+    "typescript": "~2.3.3"
+  },
+  "peerDependencies": {
+    "@angular/material": "^2.0.0-beta.10",
+    "@angular/core": "^4.0.0"
   },
   "typings": "./typings/mat-error-messages.d.ts",
   "main": "mat-error-messages.umd.js",
   "jsnext:main": "mat-error-messages.esm.js",
   "module": "mat-error-messages.esm.js",
   "types": "/typings/mat-error-messages.d.ts"
-}
+} 
