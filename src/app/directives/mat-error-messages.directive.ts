@@ -1,5 +1,5 @@
 import { DEFAULT_ERRORS } from './mat-error-messages.module';
-import { AfterViewInit, Component, HostBinding, Injector, Input, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, Injector, Input } from '@angular/core';
 import { MdInput, MdFormField, MdFormFieldControl, MdError } from '@angular/material';
 import { DefaultErrorMessages } from './default-error-messages';
 
