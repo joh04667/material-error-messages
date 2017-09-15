@@ -1,3 +1,4 @@
+import { OpaqueToken } from '@angular/core';
 // Base class to enforce the passing of the fieldName to the constructor.
 export abstract class ErrorMessages implements DefaultValidators {
 
@@ -5,6 +6,9 @@ export abstract class ErrorMessages implements DefaultValidators {
 
 }
 
+
+// Token for injecting the default errors.
+export let DEFAULT_ERRORS = new OpaqueToken('DefaultErrors');
 
 
 // This interface gives typings to the default form validators on the Validators class.

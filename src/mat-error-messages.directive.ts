@@ -1,4 +1,4 @@
-import { DEFAULT_ERRORS } from './mat-error-messages.module';
+import { DEFAULT_ERRORS } from './default-error-messages';
 import { AfterViewInit, Component, Injector, Input } from '@angular/core';
 import { MdInput, MdFormField, MdFormFieldControl, MdError } from '@angular/material';
 import { DefaultErrorMessages } from './default-error-messages';
@@ -108,7 +108,7 @@ export class MatErrorMessagesDirective implements AfterViewInit {
 
 
 
-export class Utils {
+class Utils {
   // Safe function checking against weird data types to see if something is a class.
   public static isFunction(functionToCheck): boolean {
     const getType = {};

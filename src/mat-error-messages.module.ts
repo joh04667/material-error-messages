@@ -1,8 +1,7 @@
-import { DefaultErrorMessages } from './default-error-messages';
+import { DEFAULT_ERRORS, DefaultErrorMessages } from './default-error-messages';
 import { MatErrorMessagesDirective } from './mat-error-messages.directive';
 import { ModuleWithProviders, NgModule, OpaqueToken } from '@angular/core';
 
-export let DEFAULT_ERRORS = new OpaqueToken('DefaultErrors');
 
 @NgModule({
     declarations: [MatErrorMessagesDirective],
