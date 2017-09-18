@@ -1,6 +1,6 @@
 {
   "name": "material-error-messages-src",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Source form material-error-messages",
   "keywords": [
     "angular 2",
@@ -16,6 +16,7 @@
     "defaults"
   ],
   "main": "index.js",
+  "private": true,
   "scripts": {
     "clean": "rimraf .tmp && rimraf dist",
     "transpile": "ngc",
@@ -23,17 +24,18 @@
     "minify": "./node_modules/uglify-js/bin/uglifyjs dist/bundles/mat-error-messages.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/mat-error-messages.umd.min.js",
     "copy": "node tools/copy",
     "build": "npm run clean && npm run transpile && npm run package && npm run copy",
-    "prepublish": "npm run build && cd dist",
+    "prepublish": "npm run build",
+    "publish": "cd ./dist && npm publish",
     "postpublish": "cd .."
   },
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/joh04667/material-error-messages",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/joh04667/material-error-messages/issues"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/joh04667/material-error-messages"
   },
   "devDependencies": {
     "@angular/compiler": "^4.3.0",

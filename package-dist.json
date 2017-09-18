@@ -1,6 +1,6 @@
 {
 	"name": "material-error-messages",
-	"version": "0.9.0",
+	"private": false,
 	"description": "A directive to streamline uniform, default form error messages for @angular/material.",
 	"main": "bundles/mat-error-messages.umd.min.js",
 	"module": "index.js",
