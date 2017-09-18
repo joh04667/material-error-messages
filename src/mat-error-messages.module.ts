@@ -1,6 +1,6 @@
 import { DEFAULT_ERRORS, DefaultErrorMessages } from './default-error-messages';
 import { MatErrorMessagesDirective } from './mat-error-messages.directive';
-import { ModuleWithProviders, NgModule, OpaqueToken } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { ModuleWithProviders, NgModule, OpaqueToken } from '@angular/core';
 })
 export class MatErrorMessagesModule {
 
-    public static withDefaultErrors(errors): ModuleWithProviders {
+    public static withDefaultErrors(errors: any): ModuleWithProviders {
         return {
             ngModule: MatErrorMessagesModule,
             providers: [{

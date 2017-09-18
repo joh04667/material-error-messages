@@ -40,7 +40,13 @@ export class MatErrorMessagesDirective implements AfterViewInit {
 
 
   public get formErrors(): any {
-    return this.inputRef.ngControl.errors;
+    if(this.inputRef.ngControl) {
+      return this.inputRef.ngControl.errors;
+    }
+  }
+
+  public get control(): any {
+    return this.inputRef.ngControl;
   }
 
   constructor(private _inj: Injector) { }
@@ -101,7 +107,7 @@ export class MatErrorMessagesDirective implements AfterViewInit {
     if (!this.inputRef) { return console.error(`matErrorMEssages: Directive must be used in an <md-form-field>!`) }
     if (!this.inputRef.ngControl) { return console.error(`matErrorMessages: No FormControl registered for ${this.fieldName}!`) };
 
-    this.inputRef.ngControl.statusChanges.subscribe(this.updateErrors);
+    this.control.statusChanges.subscribe(this.updateErrors);
   }
 }
 
@@ -110,14 +116,14 @@ export class MatErrorMessagesDirective implements AfterViewInit {
 
 class Utils {
   // Safe function checking against weird data types to see if something is a class.
-  public static isFunction(functionToCheck): boolean {
+  public static isFunction(functionToCheck: any): boolean {
     const getType = {};
     return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
   }
 
   // Clean little utility...If the object passed is a function, it will return the function called with the provided args. If not, just returns the object.
   // oh, if it's a class it'll return a new instance of it.
-  public static callIfFunction(obj, args, ...rest) {
+  public static callIfFunction(obj: any, args: any, ...rest: any[]) {
     const isFunction = Utils.isFunction(obj);
     return isFunction ? obj(args, ...rest) : obj;
   }

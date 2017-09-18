@@ -1,20 +1,44 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/tsc-out",
-        "noImplicitAny": false,
-        "module": "es2015",
-        "target": "ES5",
-        "rootDir": "./src",
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "sourceMap": true,
-        "declaration": true,
-        "declarationDir": "./dist/typings",
-		"types": [
-		  "node"
-		],
-		"lib": ["es2015", "dom"]
-    },
-    "files": [ "./src/mat-error-messages.ts"]
+	"compilerOptions": {
+		"baseUrl": "",
+		"declaration": true,
+		"stripInternal": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"strictNullChecks": true,
+		"noImplicitAny": true,
+		"module": "es2015",
+		"moduleResolution": "node",
+		"paths": {
+			"@angular/core": [
+				"node_modules/@angular/core"
+			],
+			"@angular/common": [
+				"node_modules/@angular/common"
+			],
+			"@angular/material": [
+				"node_modules/@angular/material"
+			],
+			"rxjs/*": [
+				"node_modules/rxjs/*"
+			]
+		},
+		"rootDir": "src",
+		"outDir": "dist",
+		"sourceMap": true,
+		"inlineSources": true,
+		"target": "es2015",
+		"skipLibCheck": true,
+		"lib": [
+			"es2015",
+			"dom"
+		]
+	},
+	"files": [
+		"./src/index.ts"
+	],
+	"angularCompilerOptions": {
+		"strictMetadataEmit": true,
+		"genDir": ".tmp"
+	}
 }

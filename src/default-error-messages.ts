@@ -1,6 +1,6 @@
 import { OpaqueToken } from '@angular/core';
 // Base class to enforce the passing of the fieldName to the constructor.
-export abstract class ErrorMessages implements DefaultValidators {
+export abstract class ErrorMessages {
 
 	constructor(public fieldName: string) { }
 
@@ -43,15 +43,15 @@ export class DefaultErrorMessages extends ErrorMessages implements DefaultValida
 	pattern = `${this.fieldName} is in the wrong format`;
 
 
-	min(err) {
+	min(err: any) {
 		return `${this.fieldName} must be more than ${err.min}.`
 	}
 
-	max(err) {
+	max(err: any) {
 		return `${this.fieldName} must be less than ${err.max}`
 	}
 
-	minlength(err) {
+	minlength(err: any) {
 		return `Max length is ${err.requiredLength} characters.`;
 	}
 
