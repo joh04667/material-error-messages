@@ -23,8 +23,9 @@
     "package": "rollup -c",
     "minify": "./node_modules/uglify-js/bin/uglifyjs dist/bundles/mat-error-messages.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/mat-error-messages.umd.min.js",
     "copy": "node tools/copy",
+    "version:update": "node tools/version",
     "build": "npm run clean && npm run transpile && npm run package && npm run copy",
-    "prepublish": "npm run build",
+    "prepublish": "npm run version:update && npm run build",
     "publish": "cd ./dist && npm publish",
     "postpublish": "cd .."
   },
